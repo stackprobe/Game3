@@ -41,8 +41,8 @@ namespace Charlotte.Games
 					double targCamX = this.Player.X - DDConsts.Screen_W / 2 + (this.CamSlideX * DDConsts.Screen_W / 3);
 					double targCamY = this.Player.Y - DDConsts.Screen_H / 2 + (this.CamSlideY * DDConsts.Screen_H / 3);
 
-					DDUtils.Range(ref targCamX, 0.0, this.Map.W * MapTile.WH - DDConsts.Screen_W);
-					DDUtils.Range(ref targCamY, 0.0, this.Map.H * MapTile.WH - DDConsts.Screen_H);
+					DDUtils.ToRange(ref targCamX, 0.0, this.Map.W * MapTile.WH - DDConsts.Screen_W);
+					DDUtils.ToRange(ref targCamY, 0.0, this.Map.H * MapTile.WH - DDConsts.Screen_H);
 
 					DDUtils.Approach(ref DDGround.Camera.X, targCamX, 0.8);
 					DDUtils.Approach(ref DDGround.Camera.Y, targCamY, 0.8);
