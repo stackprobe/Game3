@@ -42,19 +42,19 @@ namespace Charlotte.Common
 		{
 			// app > @ MaskGZData
 
-			// $_git:secretBegin
-//
-			///////////////////////////
-//
-			//////////////////////////////////////////
-			//
-				///////////////////////////////////////////////
-			//
-			/////////////////////////////////////////////////
-			//
-				////////////////////
-			//
-//
+			// $--_git:secretBegin // del @ 2020.10.10
+
+			int size = data.Length / 3;
+
+			for (int index = 0; index < size; index++)
+			{
+				ArrayTools.Swap(data, index, size + index * 2);
+			}
+			for (int index = 0; index < data.Length; index++)
+			{
+				data[index] ^= 0x6f;
+			}
+
 			// $_git:secretEnd
 
 			// < app

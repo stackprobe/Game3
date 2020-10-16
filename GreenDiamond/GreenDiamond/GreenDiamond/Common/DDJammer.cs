@@ -42,20 +42,20 @@ namespace Charlotte.Common
 		{
 			// app > @ MaskGZData
 
-			// $_git:secretBegin
-//
-			//////////////////////////
-				///////////////////////////
-				///////////////////////////
-				///////////////////////////
-				//////////////////////////
-				//
-//
-			/////////////////////////////////////////////////
-			//
-				//////////////////////////////////////////
-			//
-//
+			// $--_git:secretBegin // del @ 2020.10.10
+
+			DDRandom r = new DDRandom(
+				(uint)(data.Length % 1009),
+				(uint)(data.Length % 1013),
+				(uint)(data.Length % 1019),
+				(uint)(data.Length % 1021)
+				);
+
+			for (int index = 0; index < data.Length; index++)
+			{
+				data[index] ^= (byte)(r.Next() % 251 + 4);
+			}
+
 			// $_git:secretEnd
 
 			// < app
